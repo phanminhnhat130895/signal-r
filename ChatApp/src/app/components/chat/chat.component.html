@@ -1,0 +1,48 @@
+<h2>Chat Application</h2>
+<div class="row">
+    <div class="col-sm-2" style="border: 1px solid #c6c8cc; border-right: none">
+        <div class="list-user">
+            <h3>List User</h3>
+            <ul style="list-style-type: none">
+                <ng-container *ngFor="let user of listUser">
+                    <li *ngIf="user.UserId !== userId" class="online"
+                    [ngClass]="selectedUser && (user.UserId == selectedUser.UserId) ? 'selected-user' : user.IsHaveNewMessage ? 'new-message-notification' : ''"
+                    style="cursor: pointer" (click)="onSelectUser(user)">{{user.UserName}}</li>
+                </ng-container>
+            </ul>
+        </div>
+    </div>
+    <div class="col-sm-2" style="border: 1px solid #c6c8cc; border-right: none">
+        <div class="list-room">
+            <h3>List Group</h3>
+            <ul style="list-style-type: none">
+                <ng-container *ngFor="let room of listRoom">
+                    <li style="cursor: pointer" (click)="onSelectRoom(room)" class="online"
+                    [ngClass]="selectedRoom && (room.idroom == selectedRoom.idroom) ? 'selected-user' : room.IsHaveNewMessage ? 'new-message-notification' : ''">{{room.display_name}}</li>
+                </ng-container>
+            </ul>
+        </div>
+    </div>
+    <div class="col-sm-3" style="border: 1px solid #c6c8cc">
+        <div class="chat-area" style="padding: 10px; width: 320px; margin: auto" *ngIf="selectedUser || selectedRoom">
+            <div class="chat-title">
+                <label class="online-label"><i class="fas fa-circle"></i></label>
+                {{chatName}}
+                <label style="cursor: pointer; margin-bottom: 0px; float: right"
+                (click)="onCloseChatFrame()"><i class="fas fa-times"></i></label></div>
+            <div class="chat-frame" #chat (mouseover)="onMouseOver()" (mouseout)="onMouseOut()" (scroll)="onScroll()">
+                <ng-container *ngFor="let message of userMessage">
+                    <div class="row">
+                        <div class="col-sm-12" [ngClass]="message.iduser_send == userId ? 'text-right' : 'text-left'">
+                            <label class="message" [ngClass]="message.iduser_send == userId ? 'send-mess' : 'receive-mess'">{{message.message}}</label>
+                            <div id="anchor"></div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <input type="text" class="chat-input" placeholder="Message" [(ngModel)]="oneMessage.message" #message_data (keypress)="onMessageKeyPress($event)" />
+            <label style="cursor: pointer; margin-left: -22px"><i class="far fa-paper-plane" (click)="onSendMessage()"></i></label>
+        </div>
+    </div>
+</div>
+

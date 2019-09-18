@@ -1,0 +1,120 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\My\\signal-r\\SignalRApplication\\SignalRApplication.Repository\\SignalRApplication.Repository.csproj": {}
+  },
+  "projects": {
+    "D:\\My\\signal-r\\SignalRApplication\\SignalRApplication.DTO\\SignalRApplication.DTO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\My\\signal-r\\SignalRApplication\\SignalRApplication.DTO\\SignalRApplication.DTO.csproj",
+        "projectName": "SignalRApplication.DTO",
+        "projectPath": "D:\\My\\signal-r\\SignalRApplication\\SignalRApplication.DTO\\SignalRApplication.DTO.csproj",
+        "packagesPath": "C:\\Users\\valor-003\\.nuget\\packages\\",
+        "outputPath": "D:\\My\\signal-r\\SignalRApplication\\SignalRApplication.DTO\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\valor-003\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\My\\signal-r\\SignalRApplication\\SignalRApplication.Repository\\SignalRApplication.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\My\\signal-r\\SignalRApplication\\SignalRApplication.Repository\\SignalRApplication.Repository.csproj",
+        "projectName": "SignalRApplication.Repository",
+        "projectPath": "D:\\My\\signal-r\\SignalRApplication\\SignalRApplication.Repository\\SignalRApplication.Repository.csproj",
+        "packagesPath": "C:\\Users\\valor-003\\.nuget\\packages\\",
+        "outputPath": "D:\\My\\signal-r\\SignalRApplication\\SignalRApplication.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\valor-003\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "D:\\My\\signal-r\\SignalRApplication\\SignalRApplication.DTO\\SignalRApplication.DTO.csproj": {
+                "projectPath": "D:\\My\\signal-r\\SignalRApplication\\SignalRApplication.DTO\\SignalRApplication.DTO.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

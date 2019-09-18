@@ -1,0 +1,144 @@
+/* You can add global styles to this file, and also import other style files */
+.chat-frame{
+    border: 1px solid #d4d4d4; 
+    border-top: none;
+    border-bottom: none;
+    height: 300px; 
+    width: 300px; 
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.chat-frame::-webkit-scrollbar {
+    width: 5px;
+    background-color: #F5F5F5;
+}
+
+.chat-frame::-webkit-scrollbar-thumb {
+    background-color: #ababab;
+    border-radius: 10px;
+}
+
+.chat-frame::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #e0e0e0;
+    box-shadow: inset 0 0 6px #e0e0e0;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+.message{
+    padding: 5px 10px 5px 10px;
+    max-width: 200px;
+    border-radius: 10px;
+    margin-top: 3px;
+    margin-right: 3px;
+    margin-left: 3px;
+    transform: none;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+.send-mess{
+    color: white;
+    background-color: #03a5fc;
+}
+
+.receive-mess{
+    color: black;
+    background-color: #d3d8db;
+}
+
+.new-message-notification{
+    color: #f74040;
+}
+
+.selected-user{
+    color: #3fa5f2;
+}
+
+#login-area{
+    margin: auto;
+    vertical-align: middle;
+    height: 150px;
+    margin-top: calc((100vh - 200px) / 2);
+}
+
+.button{
+    min-height: 30px;
+    width: 150px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px 5px 10px;
+}
+
+.button-login{
+    background-color: #4267b2;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.button-login:hover{
+    opacity: 1;
+}
+
+.chat-title{
+    min-height: 30px;
+    background-color: #4267b2;
+    color: white;
+    width: 300px;
+    padding: 5px 10px 5px 10px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: -10px;
+}
+
+.chat-input{
+    width: 300px; 
+    border: 1px solid #d4d4d4; 
+    padding-left: 5px;
+    padding-right: 25px;
+    height: 35px;
+    font-size: 16px;
+}
+
+ul li.online::before{
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: #37eb34; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 0.7em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+    font-size: 25px;
+    position: relative;
+    top: 1px;
+}
+
+ul li.offline::before{
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: #bfbfbf; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 0.7em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+    font-size: 25px;
+    position: relative;
+    top: 1px;
+}
+
+.online{
+    margin-top: -10px;
+}
+
+.offline{
+    margin-top: -10px;
+}
+
+.online-label{
+    color: #37eb34; 
+    font-size: 10px; 
+    margin-bottom: 0px;
+    position: relative;
+    top: -3px;
+}

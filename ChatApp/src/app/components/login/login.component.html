@@ -1,0 +1,20 @@
+<div class="col-lg-4 col-sm-6" id="login-area">
+    <div class="row form-group">
+        <label class="col-sm-3">Username:</label>
+        <div class="col-sm-9">
+            <input class="form-control" type="text" [(ngModel)]="userName" />
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="col-sm-3">Password:</label>
+        <div class="col-sm-9">
+            <input class="form-control" type="password" [(ngModel)]="passWord" />
+        </div>
+    </div>
+    <div class="row form group">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-9">
+            <button class="button button-login" (click)="onLogin()">Login</button>
+        </div>
+    </div>
+</div>
