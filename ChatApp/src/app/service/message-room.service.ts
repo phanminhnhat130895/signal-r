@@ -12,19 +12,22 @@ export class MessageRoomService{
     constructor(private httpClient : HttpClient,
                 private shareService: ShareService){}
 
-    GetListMessage(data: string): Observable<UserMessage[]>{
-        let url = baseUrl + "message-room/get-list-message";
+    getInitHeader(){
         let header = new HttpHeaders();
         header = header.append('Content-Type', 'application/json');
         header = header.append('Authorization', 'Bearer ' + this.shareService.getAccessToken());
+        return header;
+    }
+
+    GetListMessage(data: string): Observable<UserMessage[]>{
+        let url = baseUrl + "message-room/get-list-message";
+        let header = this.getInitHeader();
         return this.httpClient.post<UserMessage[]>(url, data, {headers: header});
     }
 
     AddMessage(message: MessageRoom){
         let url = baseUrl + "message-room/add-message";
-        let header = new HttpHeaders();
-        header = header.append('Content-Type', 'application/json');
-        header = header.append('Authorization', 'Bearer ' + this.shareService.getAccessToken());
+        let header = this.getInitHeader();
         return this.httpClient.post(url, message, {headers: header});
     }
 }

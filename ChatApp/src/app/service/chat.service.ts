@@ -33,19 +33,34 @@ export class ChatService{
     //     })
     // }
 
-    getMessage(data: string) : Observable<UserMessage[]>{
-        let url = baseUrl + "chat/get-message";
+    getInitHeader(){
         let header = new HttpHeaders();
         header = header.append('Content-Type', 'application/json');
         header = header.append('Authorization', 'Bearer ' + this.shareService.getAccessToken());
+        return header;
+    }
+
+    getMessage(data: string) : Observable<UserMessage[]>{
+        let url = baseUrl + "chat/get-message";
+        let header = this.getInitHeader();
         return this.httpClient.post<UserMessage[]>(url, data, {headers: header});
     }
 
     saveMessage(message: UserMessage){
         let url = baseUrl + "chat/save-message";
-        let header = new HttpHeaders();
-        header = header.append('Content-Type', 'application/json');
-        header = header.append('Authorization', 'Bearer ' + this.shareService.getAccessToken());
+        let header = this.getInitHeader();
+        return this.httpClient.post<UserMessage[]>(url, message, {headers: header});
+    }
+
+    mongoGetMessage(data: string) : Observable<UserMessage[]>{
+        let url = baseUrl + "chat/mongo-get-message";
+        let header = this.getInitHeader();
+        return this.httpClient.post<UserMessage[]>(url, data, {headers: header});
+    }
+
+    mongoSaveMessage(message: UserMessage){
+        let url = baseUrl + "chat/mongo-save-message";
+        let header = this.getInitHeader();
         return this.httpClient.post<UserMessage[]>(url, message, {headers: header});
     }
 }

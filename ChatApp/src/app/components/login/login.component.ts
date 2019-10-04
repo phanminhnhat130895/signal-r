@@ -23,7 +23,18 @@ export class LoginComponent implements OnInit {
 
     onLogin(){
         let dataLogin = JSON.stringify({ UserName: this.userName, PassWord: this.passWord });
-        this.loginService.getLogin(dataLogin)
+        // this.loginService.getLogin(dataLogin)
+        //     .subscribe(res => {
+        //         if(res && res != "Unauthenticated!"){
+        //             this.shareService.setAccessToken(res);
+        //             this.router.navigate(["/chat"]);
+        //         }
+        //     },
+        //     err => {
+        //         console.log(err);
+        //     })
+
+        this.loginService.mongoGetLogin(dataLogin)
             .subscribe(res => {
                 if(res && res != "Unauthenticated!"){
                     this.shareService.setAccessToken(res);

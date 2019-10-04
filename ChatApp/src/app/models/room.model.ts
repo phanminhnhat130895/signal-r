@@ -1,5 +1,6 @@
 export class Room{
-    public idroom: string;
+    public _id: string;
+    // public idroom: string;
     public iduser: string;
     public series: number;
     public display_name: string;

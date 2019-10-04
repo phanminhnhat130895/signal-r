@@ -7,10 +7,21 @@ import { baseUrl } from '../common/const';
 export class LoginService{
     constructor(private httpClient : HttpClient){}
 
-    getLogin(data: string) : Observable<string>{
-        let url = baseUrl + "login/get-login";
+    getInitHeader(){
         let header = new HttpHeaders();
         header = header.append('Content-Type', 'application/json');
+        return header;
+    }
+
+    getLogin(data: string) : Observable<string>{
+        let url = baseUrl + "login/get-login";
+        let header = this.getInitHeader();
+        return this.httpClient.post<string>(url, data, {headers: header});
+    }
+
+    mongoGetLogin(data: string) : Observable<string>{
+        let url = baseUrl + "login/mongo-get-login";
+        let header = this.getInitHeader();
         return this.httpClient.post<string>(url, data, {headers: header});
     }
 }

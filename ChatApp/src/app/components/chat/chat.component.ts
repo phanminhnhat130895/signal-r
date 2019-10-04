@@ -59,7 +59,17 @@ export class ChatComponent implements OnInit {
         this.connection.on("SendListUser", (listUser) => {
             this.listUser = listUser;
             let user = this.listUser.filter(u => u.UserId == this.userId)[0];
-            this.roomService.OnJoinRoom(user.ConnectionId)
+            // this.roomService.OnJoinRoom(user.ConnectionId)
+            //     .subscribe(res => {
+            //         if(res && res.length > 0){
+            //             this.listRoom = res;
+            //         }
+            //     },
+            //     err => {
+            //         console.log(err);
+            //     })
+
+            this.roomService.MongoJoinRoom(user.ConnectionId)
                 .subscribe(res => {
                     if(res && res.length > 0){
                         this.listRoom = res;
@@ -96,8 +106,8 @@ export class ChatComponent implements OnInit {
 
         this.connection.on("SendMessageToGroup", (idGroup, message) => {
             this.userMessage.push(message);
-            let room = this.listRoom.filter(u => u.idroom == idGroup)[0];
-            if(this.selectedUser && this.selectedRoom.idroom == idGroup){
+            let room = this.listRoom.filter(u => u._id == idGroup)[0];
+            if(this.selectedUser && this.selectedRoom._id == idGroup){
                 setTimeout(() => {
                     this.chatEl.nativeElement.scrollTop = this.chatEl.nativeElement.scrollHeight;
                 }, 10)
@@ -109,7 +119,6 @@ export class ChatComponent implements OnInit {
 
         this.connection.start()
             .then(() => {
-                console.log("Connection started.");
                 this.connection.invoke("SendListUser");
                 this.connection.invoke("SendUserConnect", this.userId);
             },
@@ -122,18 +131,26 @@ export class ChatComponent implements OnInit {
         if(this.oneMessage.message.trim()){
             if(this.selectedUser){
                 this.connection.invoke("SendMessageToOne", this.selectedUser.ConnectionId, this.oneMessage);
-                this.chatService.saveMessage(this.oneMessage)
-                    .subscribe(res => {
+                // this.chatService.saveMessage(this.oneMessage)
+                //     .subscribe(res => {
                         
+                //     },
+                //     err => {
+                //         console.log(err);
+                //     })
+
+                this.chatService.mongoSaveMessage(this.oneMessage)
+                    .subscribe(res => {
+
                     },
                     err => {
                         console.log(err);
                     })
             }
             else{
-                this.connection.invoke("SendMessageToGroup", this.selectedRoom.idroom, this.oneMessage);
+                this.connection.invoke("SendMessageToGroup", this.selectedRoom._id, this.oneMessage);
                 let data = new MessageRoom();
-                data.idroom = this.selectedRoom.idroom;
+                data.idroom = this.selectedRoom._id;
                 data.iduser_send = this.userId;
                 data.message = this.oneMessage.message;
                 this.messageRoomService.AddMessage(data)
@@ -171,7 +188,21 @@ export class ChatComponent implements OnInit {
         this.userMessage = [];
         this.offset = 0;
         let data = JSON.stringify({ iduser_send: this.userId, iduser_receive: (this.selectedUser as User).UserId, limit_mess: this.limit, offset_mess: this.offset });
-        this.chatService.getMessage(data)
+        // this.chatService.getMessage(data)
+        //     .subscribe(res => {
+        //         if(res && res.length > 0){
+        //             this.userMessage = res;
+        //             setTimeout(() => {
+        //                 let el = document.getElementsByClassName("chat-frame")[0];
+        //                 el.scrollTop = el.scrollHeight + 50;
+        //             }, 0);
+        //         }
+        //     },
+        //     err => {
+        //         console.log(err);
+        //     })
+
+        this.chatService.mongoGetMessage(data)
             .subscribe(res => {
                 if(res && res.length > 0){
                     this.userMessage = res;
@@ -262,7 +293,7 @@ export class ChatComponent implements OnInit {
     onGetRoomMessage(){
         this.userMessage = [];
         this.offset = 0;
-        let data = JSON.stringify({ idRoom: this.selectedRoom.idroom, limit_mess: this.limit, offset_mess: this.offset });
+        let data = JSON.stringify({ idRoom: this.selectedRoom._id, limit_mess: this.limit, offset_mess: this.offset });
         this.messageRoomService.GetListMessage(data)
             .subscribe(res => {
                 if(res && res.length > 0){

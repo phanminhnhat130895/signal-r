@@ -8,13 +8,24 @@ import { Room } from '../models/room.model';
 @Injectable()
 export class RoomService{
     constructor(private httpClient : HttpClient,
-                private shareSerice: ShareService){}
+                private shareService: ShareService){}
+
+    getInitHeader(){
+        let header = new HttpHeaders();
+        header = header.append('Content-Type', 'application/json');
+        header = header.append('Authorization', 'Bearer ' + this.shareService.getAccessToken());
+        return header;
+    }
 
     OnJoinRoom(connectionId: string) : Observable<Room[]>{
         let url = baseUrl + "room/join-room/" + connectionId;
-        let header = new HttpHeaders();
-        header = header.append('Content-Type', 'application/json');
-        header = header.append('Authorization', 'Bearer ' + this.shareSerice.getAccessToken());
+        let header = this.getInitHeader();
+        return this.httpClient.get<Room[]>(url, {headers: header});
+    }
+
+    MongoJoinRoom(connectionId: string) : Observable<Room[]>{
+        let url = baseUrl + "room/mongo-join-room/" + connectionId;
+        let header = this.getInitHeader();
         return this.httpClient.get<Room[]>(url, {headers: header});
     }
 }

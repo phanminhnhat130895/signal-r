@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +8,9 @@ namespace SignalRApplication.DTO
 {
     public class Room
     {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string _id { get; set; }
         public string idroom { get; set; }
         public string iduser { get; set; }
         public int series { get; set; }

@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
 using SignalRApplication.DTO;
 using SignalRApplication.Repository.Infrastructure;
+using SignalRApplication.Repository.Mongo.Interfaces;
 using SignalRApplication.Service.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -14,12 +16,18 @@ namespace SignalRApplication.Service.Implementations
     {
         private IRepository<MessageRoom> _messageRoomRepository;
         private IUnitOfWork _unitOfWork;
+        private IMessageRoomRepository _mongoMessageRoomRepository;
+        private ILogger _Logger;
 
         public MessageRoomService(IRepository<MessageRoom> messageRoomRepository,
-            IUnitOfWork unitOfWork)
+            IUnitOfWork unitOfWork,
+            IMessageRoomRepository mongoMessageRoomRepository,
+            ILoggerFactory loggerFactory)
         {
             _messageRoomRepository = messageRoomRepository;
             _unitOfWork = unitOfWork;
+            _mongoMessageRoomRepository = mongoMessageRoomRepository;
+            _Logger = loggerFactory.CreateLogger("MessageRoomService");
         }
 
         public List<Message> GetListMessage(JObject clientData)
@@ -39,6 +47,7 @@ namespace SignalRApplication.Service.Implementations
             }
             catch(Exception ex)
             {
+                _Logger.LogError("MessageRoomService.GetListMessage: " + ex.ToString());
                 return null;
             }
         }
@@ -53,7 +62,40 @@ namespace SignalRApplication.Service.Implementations
             }
             catch(Exception ex)
             {
+                _Logger.LogError("MessageRoomService.AddMessage: " + ex.ToString());
+            }
+        }
 
+        public List<Message> mongoGetListMessage(JObject clientData)
+        {
+            try
+            {
+                string idRoom = clientData["idRoom"].ToString();
+                int limit = int.Parse(clientData["limit_mess"].ToString());
+                int offset = int.Parse(clientData["offset_mess"].ToString());
+
+                var listMess = _mongoMessageRoomRepository.getListMessage(idRoom, limit, offset);
+                var result = Mapper.Map<Message[]>(listMess).ToList();
+
+                return result;
+            }
+            catch(Exception ex)
+            {
+                _Logger.LogError("MessageRoomService.mongoGetListMessage: " + ex.ToString());
+                return null;
+            }
+        }
+
+        public void mongoAddMessage(MessageRoom message)
+        {
+            try
+            {
+                message.create_at = DateTime.Now;
+                _mongoMessageRoomRepository.addMessageRoom(message);
+            }
+            catch(Exception ex)
+            {
+                _Logger.LogError("MessageRoomService.mongoAddMessage: " + ex.ToString());
             }
         }
     }

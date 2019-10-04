@@ -26,16 +26,31 @@ namespace SignalRApplication.Controllers
             _hub = hub;
         }
 
+        //[Authorize]
+        //[HttpGet, Route("join-room/{connectionId}")]
+        //public IList<Room> JoinRoom(string connectionId)
+        //{
+        //    string userId = User.FindFirst("UserId")?.Value;
+        //    var listRoom = _roomService.GetListRoom(userId);
+
+        //    listRoom.ForEach(e =>
+        //    {
+        //        _hub.Groups.AddToGroupAsync(connectionId, e._id);
+        //    });
+
+        //    return listRoom;
+        //}
+
         [Authorize]
-        [HttpGet, Route("join-room/{connectionId}")]
-        public IList<Room> JoinRoom(string connectionId)
+        [HttpGet, Route("mongo-join-room/{connectionId}")]
+        public IList<Room> MongoJoinRoom(string connectionId)
         {
             string userId = User.FindFirst("UserId")?.Value;
-            var listRoom = _roomService.GetListRoom(userId);
+            var listRoom = _roomService.mongoGetListRoom(userId);
 
-            listRoom.ForEach(e =>
+            listRoom.ForEach(r =>
             {
-                _hub.Groups.AddToGroupAsync(connectionId, e.idroom);
+                _hub.Groups.AddToGroupAsync(connectionId, r.idroom);
             });
 
             return listRoom;

@@ -10,3 +10,15 @@ D:\My\signal-r\SignalRApplication\SignalRApplication.Common\obj\Debug\netcoreapp
 D:\My\signal-r\SignalRApplication\SignalRApplication.Common\obj\Debug\netcoreapp2.2\SignalRApplication.Common.csproj.CopyComplete
 D:\My\signal-r\SignalRApplication\SignalRApplication.Common\obj\Debug\netcoreapp2.2\SignalRApplication.Common.dll
 D:\My\signal-r\SignalRApplication\SignalRApplication.Common\obj\Debug\netcoreapp2.2\SignalRApplication.Common.pdb
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Common\bin\Debug\netcoreapp2.2\SignalRApplication.Common.deps.json
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Common\bin\Debug\netcoreapp2.2\SignalRApplication.Common.dll
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Common\bin\Debug\netcoreapp2.2\SignalRApplication.Common.pdb
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Common\bin\Debug\netcoreapp2.2\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Common\bin\Debug\netcoreapp2.2\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Common\obj\Debug\netcoreapp2.2\SignalRApplication.Common.csprojAssemblyReference.cache
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Common\obj\Debug\netcoreapp2.2\SignalRApplication.Common.csproj.CoreCompileInputs.cache
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Common\obj\Debug\netcoreapp2.2\SignalRApplication.Common.AssemblyInfoInputs.cache
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Common\obj\Debug\netcoreapp2.2\SignalRApplication.Common.AssemblyInfo.cs
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Common\obj\Debug\netcoreapp2.2\SignalRApplication.Common.csproj.CopyComplete
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Common\obj\Debug\netcoreapp2.2\SignalRApplication.Common.dll
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Common\obj\Debug\netcoreapp2.2\SignalRApplication.Common.pdb

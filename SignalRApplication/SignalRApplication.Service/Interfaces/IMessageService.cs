@@ -8,8 +8,12 @@ namespace SignalRApplication.Service.Interfaces
 {
     public interface IMessageService
     {
-        IList<Message> GetListMessage(JObject clientData);
+        //IList<Message> GetListMessage(JObject clientData);
 
-        void SaveMessage(Message message);
+        //void SaveMessage(Message message);
+
+        IList<Message> mongoGetListMessage(JObject clientData);
+
+        void mongoSaveMessage(Message message);
     }
 }

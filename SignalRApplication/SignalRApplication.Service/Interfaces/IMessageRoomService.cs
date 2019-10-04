@@ -11,5 +11,9 @@ namespace SignalRApplication.Service.Interfaces
         List<Message> GetListMessage(JObject clientData);
 
         void AddMessage(MessageRoom model);
+
+        List<Message> mongoGetListMessage(JObject clientData);
+
+        void mongoAddMessage(MessageRoom message);
     }
 }

@@ -1,5 +1,5 @@
 export class MessageRoom{
-    public idmessage: number;
+    // public idmessage: number;
     public idroom: string;
     public iduser_send: string;
     public message: string;

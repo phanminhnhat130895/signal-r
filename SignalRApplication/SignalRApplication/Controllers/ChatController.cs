@@ -33,18 +33,32 @@ namespace SignalRApplication.Controllers
             _hub.Clients.All.SendAsync("SendTitle", "Chat Application");
         }
 
+        //[Authorize]
+        //[HttpPost, Route("get-message")]
+        //public IList<Message> GetListMessage([FromBody]JObject clientData)
+        //{
+        //    return _messageService.GetListMessage(clientData);
+        //}
+
+        //[Authorize]
+        //[HttpPost, Route("save-message")]
+        //public void SaveMessage([FromBody]Message message)
+        //{
+        //    _messageService.SaveMessage(message);
+        //}
+
         [Authorize]
-        [HttpPost, Route("get-message")]
-        public IList<Message> GetListMessage([FromBody]JObject clientData)
+        [HttpPost, Route("mongo-get-message")]
+        public IList<Message> MongoGetListMessage([FromBody]JObject clientData)
         {
-            return _messageService.GetListMessage(clientData);
+            return _messageService.mongoGetListMessage(clientData);
         }
 
         [Authorize]
-        [HttpPost, Route("save-message")]
-        public void SaveMessage([FromBody]Message message)
+        [HttpPost, Route("mongo-save-message")]
+        public void MongoSaveMessage([FromBody]Message message)
         {
-            _messageService.SaveMessage(message);
+            _messageService.mongoSaveMessage(message);
         }
     }
 }

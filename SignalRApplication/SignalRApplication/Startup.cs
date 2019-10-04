@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using log4net.Config;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -6,11 +7,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Serialization;
 using SignalRApplication.Repository;
 using SignalRApplication.Service.AutoMapper;
 using SignalRApplication.SignalR;
+using System.IO;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -30,6 +34,9 @@ namespace SignalRApplication
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            var logRepository = log4net.LogManager.GetRepository(Assembly.GetEntryAssembly());
+            XmlConfigurator.Configure(logRepository, new FileInfo("log4net.config"));
+
             // AutoMapper
             Mapper.Initialize(cfg => cfg.AddProfile<UserProfile>());
             services.AddAutoMapper();
@@ -47,7 +54,8 @@ namespace SignalRApplication
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
-                    builder => builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader().AllowCredentials());
+                    builder => builder.WithOrigins("http://localhost:4200", "http://localhost:4000")
+                    .AllowAnyMethod().AllowAnyHeader().AllowCredentials());
             });
 
             // Token Authenticate
@@ -93,7 +101,7 @@ namespace SignalRApplication
             services.AddSignalR().AddJsonProtocol(options => {
                 options.PayloadSerializerSettings.ContractResolver =
                 new DefaultContractResolver();
-            }); ;
+            });
 
             // Json Return
             services.AddMvc()
@@ -104,12 +112,14 @@ namespace SignalRApplication
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            loggerFactory.AddLog4Net();
 
             // authenticate
             app.UseAuthentication();

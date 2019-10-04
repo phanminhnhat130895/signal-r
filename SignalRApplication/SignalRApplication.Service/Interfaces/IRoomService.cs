@@ -7,6 +7,8 @@ namespace SignalRApplication.Service.Interfaces
 {
     public interface IRoomService
     {
-        List<Room> GetListRoom(string userId);
+        //List<Room> GetListRoom(string userId);
+
+        List<Room> mongoGetListRoom(string userId);
     }
 }

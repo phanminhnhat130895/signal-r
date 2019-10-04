@@ -692,11 +692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\My\\signal-r\\SignalRApplication\\SignalRApplication.Common\\SignalRApplication.Common.csproj",
+      "projectUniqueName": "D:\\My\\signal-r\\signal-r\\SignalRApplication\\SignalRApplication.Common\\SignalRApplication.Common.csproj",
       "projectName": "SignalRApplication.Common",
-      "projectPath": "D:\\My\\signal-r\\SignalRApplication\\SignalRApplication.Common\\SignalRApplication.Common.csproj",
+      "projectPath": "D:\\My\\signal-r\\signal-r\\SignalRApplication\\SignalRApplication.Common\\SignalRApplication.Common.csproj",
       "packagesPath": "C:\\Users\\valor-003\\.nuget\\packages\\",
-      "outputPath": "D:\\My\\signal-r\\SignalRApplication\\SignalRApplication.Common\\obj\\",
+      "outputPath": "D:\\My\\signal-r\\signal-r\\SignalRApplication\\SignalRApplication.Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

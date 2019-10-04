@@ -12,3 +12,17 @@ D:\My\signal-r\SignalRApplication\SignalRApplication.Repository\obj\Debug\netcor
 D:\My\signal-r\SignalRApplication\SignalRApplication.Repository\obj\Debug\netcoreapp2.2\SignalRApplication.Repository.pdb
 D:\My\signal-r\SignalRApplication\SignalRApplication.Repository\bin\Debug\netcoreapp2.2\SignalRApplication.Repository.runtimeconfig.json
 D:\My\signal-r\SignalRApplication\SignalRApplication.Repository\bin\Debug\netcoreapp2.2\SignalRApplication.Repository.runtimeconfig.dev.json
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Repository\bin\Debug\netcoreapp2.2\SignalRApplication.Repository.deps.json
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Repository\bin\Debug\netcoreapp2.2\SignalRApplication.Repository.runtimeconfig.json
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Repository\bin\Debug\netcoreapp2.2\SignalRApplication.Repository.runtimeconfig.dev.json
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Repository\bin\Debug\netcoreapp2.2\SignalRApplication.Repository.dll
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Repository\bin\Debug\netcoreapp2.2\SignalRApplication.Repository.pdb
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Repository\bin\Debug\netcoreapp2.2\SignalRApplication.DTO.dll
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Repository\bin\Debug\netcoreapp2.2\SignalRApplication.DTO.pdb
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Repository\obj\Debug\netcoreapp2.2\SignalRApplication.Repository.csprojAssemblyReference.cache
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Repository\obj\Debug\netcoreapp2.2\SignalRApplication.Repository.csproj.CoreCompileInputs.cache
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Repository\obj\Debug\netcoreapp2.2\SignalRApplication.Repository.AssemblyInfoInputs.cache
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Repository\obj\Debug\netcoreapp2.2\SignalRApplication.Repository.AssemblyInfo.cs
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Repository\obj\Debug\netcoreapp2.2\SignalRApplication.Repository.csproj.CopyComplete
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Repository\obj\Debug\netcoreapp2.2\SignalRApplication.Repository.dll
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.Repository\obj\Debug\netcoreapp2.2\SignalRApplication.Repository.pdb

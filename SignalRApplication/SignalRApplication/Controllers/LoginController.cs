@@ -50,6 +50,28 @@ namespace SignalRApplication.Controllers
             return new JsonResult(token);
         }
 
+        [HttpPost, Route("mongo-get-login")]
+        public JsonResult MongoGetToken([FromBody]JObject clientData)
+        {
+            // check user exists in database if have database
+            string UserName = clientData["UserName"].ToString();
+            string PassWord = clientData["PassWord"].ToString();
+
+            UserViewModel result = _userService.MongoLogin(UserName, PassWord);
+
+            string token = "";
+            if (result != null)
+            {
+                token = CreateToken(result);
+            }
+            else
+            {
+                token = "Unauthenticated!";
+            }
+
+            return new JsonResult(token);
+        }
+
         private string CreateToken(UserViewModel model)
         {
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));

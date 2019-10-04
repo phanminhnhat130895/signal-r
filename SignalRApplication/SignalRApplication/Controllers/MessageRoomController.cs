@@ -35,5 +35,19 @@ namespace SignalRApplication.Controllers
         {
             _messageRoomService.AddMessage(model);
         }
+
+        [Authorize]
+        [HttpPost, Route("mongo-get-list-message")]
+        public List<Message> MongoGetListMessage([FromBody]JObject clientData)
+        {
+            return _messageRoomService.mongoGetListMessage(clientData);
+        }
+
+        [Authorize]
+        [HttpPost, Route("mongo-add-message")]
+        public void MongoAddMessage([FromBody]MessageRoom message)
+        {
+            _messageRoomService.mongoAddMessage(message);
+        }
     }
 }

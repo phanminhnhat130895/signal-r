@@ -7,3 +7,12 @@ D:\My\signal-r\SignalRApplication\SignalRApplication.DTO\obj\Debug\netcoreapp2.2
 D:\My\signal-r\SignalRApplication\SignalRApplication.DTO\obj\Debug\netcoreapp2.2\SignalRApplication.DTO.AssemblyInfo.cs
 D:\My\signal-r\SignalRApplication\SignalRApplication.DTO\obj\Debug\netcoreapp2.2\SignalRApplication.DTO.dll
 D:\My\signal-r\SignalRApplication\SignalRApplication.DTO\obj\Debug\netcoreapp2.2\SignalRApplication.DTO.pdb
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.DTO\bin\Debug\netcoreapp2.2\SignalRApplication.DTO.deps.json
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.DTO\bin\Debug\netcoreapp2.2\SignalRApplication.DTO.dll
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.DTO\bin\Debug\netcoreapp2.2\SignalRApplication.DTO.pdb
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.DTO\obj\Debug\netcoreapp2.2\SignalRApplication.DTO.csprojAssemblyReference.cache
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.DTO\obj\Debug\netcoreapp2.2\SignalRApplication.DTO.csproj.CoreCompileInputs.cache
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.DTO\obj\Debug\netcoreapp2.2\SignalRApplication.DTO.AssemblyInfoInputs.cache
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.DTO\obj\Debug\netcoreapp2.2\SignalRApplication.DTO.AssemblyInfo.cs
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.DTO\obj\Debug\netcoreapp2.2\SignalRApplication.DTO.dll
+D:\My\signal-r\signal-r\SignalRApplication\SignalRApplication.DTO\obj\Debug\netcoreapp2.2\SignalRApplication.DTO.pdb
